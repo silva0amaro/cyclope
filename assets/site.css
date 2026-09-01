@@ -1,0 +1,341 @@
+
+  :root {
+    --ground: #070b14;
+    --raised: #0e1626;
+    --sunken: #0a1120;
+    --line: #1e2c44;
+    --line-soft: #16223a;
+    --text: #e2ecfa;
+    --muted: #8ba0bd;
+    --dim: #64789a;
+    --accent: #72e1ea;
+    --amber: #d7a766;
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "IBM Plex Sans", -apple-system, system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+  .narrow { max-width: 660px; }
+
+  .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin: 0 0 18px;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(44px, 7vw, 82px);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(30px, 4.2vw, 46px);
+    line-height: 1.1;
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    letter-spacing: -0.005em;
+  }
+  em { font-style: italic; }
+
+  p { margin: 0 0 20px; }
+  .lede { font-size: 21px; line-height: 1.55; color: var(--muted); }
+  .muted { color: var(--muted); }
+
+  /* ---------------- masthead ---------------- */
+  header.top {
+    border-bottom: 1px solid var(--line-soft);
+    padding: 26px 0;
+  }
+  .brand { display: flex; align-items: center; gap: 13px; }
+  .brand a.topnav {
+    margin-left: auto;
+    color: var(--dim);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+  .brand a.topnav:hover { color: var(--accent); }
+  .brand-name {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  /* ---------------- hero ---------------- */
+  .hero { padding: 96px 0 8px; }
+  .hero .lede { max-width: 640px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; align-items: center; }
+
+  a.cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #04222a;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 13px 26px;
+    border-radius: 4px;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  a.cta:hover { background: #8ceaf2; transform: translateY(-1px); }
+  a.cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  a.quiet {
+    color: var(--muted);
+    font-size: 15px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+  }
+  a.quiet:hover { color: var(--text); border-color: var(--accent); }
+
+  /* ---------------- screenshots ---------------- */
+  figure { margin: 0; }
+  .shot {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--sunken);
+    box-shadow: 0 24px 70px -30px rgba(0, 0, 0, 0.9);
+  }
+  .shot img { display: block; width: 100%; height: auto; }
+  figcaption {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--dim);
+    margin-top: 12px;
+    letter-spacing: 0.02em;
+  }
+  .bleed { margin-top: 56px; }
+
+  section { padding: 92px 0; border-top: 1px solid var(--line-soft); }
+  section:first-of-type { border-top: none; }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .split.reverse .text { order: 2; }
+  @media (max-width: 860px) {
+    .split { grid-template-columns: 1fr; gap: 36px; }
+    .split.reverse .text { order: 0; }
+  }
+
+  /* ---------------- the rotation table ---------------- */
+  .scroller { overflow-x: auto; margin: 28px 0 12px; }
+  table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 15px; }
+  th, td { text-align: left; padding: 12px 18px 12px 0; border-bottom: 1px solid var(--line-soft); }
+  th {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--dim);
+    font-weight: 500;
+  }
+  td.figure-cell {
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  td.wide { color: var(--amber); }
+
+  /* ---------------- feature grid ---------------- */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2px;
+    background: var(--line-soft);
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  .cell { background: var(--ground); padding: 30px 28px; }
+  .cell p { margin: 0; font-size: 15.5px; color: var(--muted); }
+
+  /* ---------------- safety ---------------- */
+  .refusals { list-style: none; padding: 0; margin: 32px 0 0; }
+  .refusals li {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 24px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line-soft);
+  }
+  .refusals .what {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--amber);
+    letter-spacing: 0.04em;
+    padding-top: 3px;
+  }
+  .refusals .why { color: var(--muted); font-size: 15.5px; }
+  @media (max-width: 640px) {
+    .refusals li { grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  /* ---------------- compatibility ---------------- */
+  .kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 34px; margin-top: 40px; }
+  .kit h3 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); font-weight: 500; margin-bottom: 14px; }
+  .kit ul { list-style: none; margin: 0; padding: 0; }
+  .kit li { padding: 5px 0; font-size: 15.5px; color: var(--muted); }
+
+  ul.plain-list { list-style: none; padding: 0; margin: 20px 0 0; }
+  ul.plain-list li {
+    padding: 14px 0; border-top: 1px solid var(--line-soft);
+    color: var(--muted); font-size: 15.5px;
+  }
+  ul.plain-list strong { color: var(--text); font-weight: 600; }
+
+  /* ---------------- closing ---------------- */
+  .closing { text-align: left; padding: 110px 0 40px; }
+  footer {
+    border-top: 1px solid var(--line-soft);
+    padding: 34px 0 70px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--dim);
+    letter-spacing: 0.03em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* The address is shown rather than hidden behind a mail link: a page inside
+     a sandboxed frame cannot open a mail client, and a button that does nothing
+     is worse than an address anyone can read and copy. */
+  .address {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 16px;
+    border: 1px solid var(--line); border-radius: 6px;
+    background: var(--raised); padding: 18px 22px; margin-top: 34px;
+    max-width: 560px;
+  }
+  .address-label {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--dim);
+  }
+  .address-value {
+    font-family: var(--mono); font-size: 17px; color: var(--accent);
+    user-select: all; flex: 1; min-width: 210px;
+  }
+  button.copy {
+    font-family: var(--sans); font-size: 13.5px; font-weight: 500;
+    background: transparent; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 4px;
+    padding: 7px 15px; cursor: pointer;
+  }
+  button.copy:hover { color: var(--text); border-color: var(--accent); }
+  button.copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    a.cta { transition: none; }
+  }
+
+  /* ---------------- enquiry form ---------------- */
+  form.enquiry {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--raised);
+    padding: 30px 30px 26px;
+    margin-top: 34px;
+    max-width: 620px;
+  }
+  .field { margin-bottom: 20px; }
+  .field label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 8px;
+  }
+  .field .hint {
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-size: 11.5px;
+    color: #4d5f7d;
+    margin-left: 6px;
+  }
+  .field input, .field textarea {
+    width: 100%;
+    background: var(--sunken);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    padding: 11px 13px;
+    resize: vertical;
+  }
+  .field input:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .field.invalid input, .field.invalid textarea { border-color: var(--danger, #ff9c9c); }
+  .field.human input { max-width: 130px; }
+
+  /* Out of sight, out of the tab order, out of the accessibility tree. Not
+     display:none, which some automated submitters skip for that very reason. */
+  .trap {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  button.send {
+    background: var(--accent);
+    color: #04222a;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    cursor: pointer;
+  }
+  button.send:hover { background: #8ceaf2; }
+  button.send:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  button.send[disabled] { opacity: 0.5; cursor: default; }
+  .status { font-size: 14.5px; color: var(--muted); }
+  .status.bad { color: #ff9c9c; }
+  .status.good { color: var(--accent); }
+  .fineprint { font-size: 13px; color: #4d5f7d; margin: 18px 0 0; }

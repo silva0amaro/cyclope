@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyclope Field Guide</title>
+<meta name="description" content="Preparing a night with Cyclope: setting up, focusing, deep-sky work on an alt-azimuth mount, and what to check when something is wrong.">
+<meta name="theme-color" content="#070b14">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="assets/guide.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cyclope Field Guide">
+<meta property="og:description" content="Preparing a night with Cyclope: setting up, focusing, deep-sky work on an alt-azimuth mount, and what to check when something is wrong.">
+<meta property="og:image" content="assets/observatory.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="guide">
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 100 100" role="img" aria-label="Cyclope">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#1e2c44" stroke-width="6"/>
+        <path d="M50 8 a42 42 0 0 1 0 84" fill="none" stroke="#72e1ea" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="19" fill="#72e1ea" opacity="0.9"/>
+        <circle cx="43" cy="43" r="6" fill="#dffbfd"/>
+      </svg>
+      <span class="brand-name">Cyclope</span>
+      <a href="index.html">Back to Cyclope</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="layout">
+
+    <nav class="toc" aria-label="Contents">
+      <p>Field guide</p>
+      <a href="#before">Before you go out</a>
+      <a href="#setup">Setting up</a>
+      <a href="#focus">Getting focus</a>
+      <a href="#moon">Start with the Moon</a>
+      <a href="#deep">Deep sky, honestly</a>
+      <a href="#unattended">Leaving it running</a>
+      <a href="#refuse">What it refuses</a>
+      <a href="#wrong">When something is wrong</a>
+    </nav>
+
+    <article>
+      <h1>Field guide</h1>
+      <p class="lede">
+        The short version of the operating manual: what to do, in order, on a night
+        that works — and the three or four things that quietly ruin one.
+      </p>
+
+      <section id="before">
+        <h2>Before you go out</h2>
+        <p>
+          Most failed nights are decided indoors. These take ten minutes and save
+          hours.
+        </p>
+        <ol class="steps">
+          <li><span><strong>Put the telescope outside thirty to sixty minutes early.</strong>
+            On a Schmidt-Cassegrain this is not optional: while the tube is warmer
+            than the air, the air inside it moves, and no focus you find will hold.</span></li>
+          <li><span><strong>Charge both batteries</strong> — the camera's and the mount's.
+            A warning at a quarter charge is not much use at two in the morning.</span></li>
+          <li><span><strong>Turn the camera's Wi-Fi and Bluetooth off.</strong> In wireless
+            mode a Canon will not accept a USB session at all.</span></li>
+          <li><span><strong>Quit the manufacturer's own utility completely.</strong> Only
+            one program can own the camera; if theirs has it, Cyclope cannot.</span></li>
+          <li><span><strong>Tie a loop of slack cable to the tripod.</strong> On an
+            alt-azimuth mount the cable ruins more frames than the sky does.</span></li>
+        </ol>
+      </section>
+
+      <section id="setup">
+        <h2>Setting up</h2>
+        <ol class="steps">
+          <li><span>Connect the mount and choose its port. The status strip along the top
+            names the transport once it is connected.</span></li>
+          <li><span>Do the alignment. Two stars is the minimum, three in a different part
+            of the sky is what turns a fit into a model worth trusting. Without it,
+            <em>go to</em> will not land.</span></li>
+          <li><span>Start the camera and its live view.</span></li>
+          <li><span>Set the location once. Everything that follows — where objects are,
+            when they set, how fast the field turns — is computed from it.</span></li>
+        </ol>
+        <div class="note">
+          <p><strong>Centre stars the same way every time.</strong> Approach at a slow
+          speed and finish with the same two directional controls. A mount has
+          backlash, and approaching consistently from one side is what keeps it out
+          of the pointing model.</p>
+        </div>
+      </section>
+
+      <section id="focus">
+        <h2>Getting focus</h2>
+        <div class="warn">
+          <p><strong>Never focus on the object you came to photograph.</strong> A
+          nebula or a galaxy is faint and diffuse and has nothing in it to focus on.
+          Focus on a bright star at a similar altitude, then go to the target.
+          Focus does not change when the telescope turns — only as the tube cools.</p>
+        </div>
+        <p>
+          At a typical focal ratio the entire range that counts as sharp is under a
+          twentieth of a millimetre of focuser travel. That is why the eye is not
+          enough and why Cyclope gives you a number instead.
+        </p>
+        <ol class="steps">
+          <li><span>Point at a genuinely bright star. A live view shows the brighter stars
+            only — not any star.</span></li>
+          <li><span><strong>Set the live view for the dark.</strong> Its exposure and
+            sensitivity are separate from the capture settings, and left at daylight
+            values they show nothing at all on a dark sky. This catches everyone once.</span></li>
+          <li><span>Find the star at 1× before zooming. At 10× the field is a tiny fraction
+            of the sky and the star is probably not in it.</span></li>
+          <li><span>Start the focus measurement and turn slowly. The reading falls to a
+            minimum and rises again; the minimum is focus. Cyclope also says which
+            way you are going.</span></li>
+          <li><span>On a Schmidt-Cassegrain, finish turning in the same direction every
+            time. The mirror has play, and reversing lets it settle somewhere else.</span></li>
+        </ol>
+        <div class="note">
+          <p><strong>With a hand focuser, use a Bahtinov mask.</strong> Cyclope reads
+          one: bring the central spike's offset to zero. It gives a geometric answer
+          where a number alone flickers with the seeing. Masks are inexpensive, and
+          this is the single best few euros in the hobby.</p>
+        </div>
+        <p class="muted">
+          Refocus as the night cools — every three-quarters of an hour, or after two
+          or three degrees of temperature drop.
+        </p>
+      </section>
+
+      <section id="moon">
+        <h2>Start with the Moon</h2>
+        <p>
+          The Moon is a better first target than any deep-sky object: it is bright
+          enough that exposure is easy, it shows immediately whether the focus and
+          the tracking are right, and it rewards a first night rather than testing
+          your patience.
+        </p>
+        <ul class="plain">
+          <li><span>Use a short exposure — the point is to stop the atmosphere, not to
+            collect light.</span></li>
+          <li><span>Focus on the terminator, the line between light and shadow, where the
+            detail is.</span></li>
+          <li><span>Shoot a burst of a few hundred frames and keep only the sharpest tenth.
+            Cyclope scores them and stacks the ones where the air happened to be
+            still, which is where lunar and planetary sharpness actually comes from.</span></li>
+        </ul>
+      </section>
+
+      <section id="deep">
+        <h2>Deep sky, honestly</h2>
+        <p>
+          On an alt-azimuth mount the sky turns slowly inside the frame while the
+          telescope tracks. That, and not the mount's accuracy, is what limits a
+          single exposure — and it gets worse the higher you point.
+        </p>
+        <div class="scroller">
+          <table>
+            <thead>
+              <tr><th>Where the object is</th><th>Field turns</th><th>Longest frame</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Near the zenith</td><td class="figure-cell">very fast</td><td class="figure-cell">under a second</td></tr>
+              <tr><td>Due south, halfway up</td><td class="figure-cell">fast</td><td class="figure-cell">a few seconds</td></tr>
+              <tr><td>Due east or west</td><td class="figure-cell">slowest</td><td class="figure-cell">tens of seconds</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Two consequences, and both invert the usual advice. Do not photograph an
+          object when it is highest — photograph it when it lies east or west, at a
+          moderate altitude. And expect to take many short frames rather than a few
+          long ones. Cyclope computes the actual number for your telescope and
+          shows it while you work.
+        </p>
+        <h3>What makes short frames add up</h3>
+        <ul class="plain">
+          <li><span><strong>Turning each frame back</strong> before stacking. Without it,
+            every star in the result is a short arc.</span></li>
+          <li><span><strong>Dithering</strong> — moving the telescope slightly between
+            frames, so the sensor's own hot pixels and dust do not land in the same
+            place each time and survive the stacking.</span></li>
+          <li><span><strong>Dark frames</strong> at the same exposure, gain and
+            temperature, captured for you in a named set.</span></li>
+        </ul>
+        <div class="note">
+          <p><strong>An equatorial mount removes the limit entirely.</strong> If the
+          alt-azimuth ceiling is what stands between you and the picture you want,
+          a wedge or an equatorial mount changes the order of magnitude of what you
+          can photograph — far more than any change of camera. Cyclope tracks either
+          kind.</p>
+        </div>
+      </section>
+
+      <section id="unattended">
+        <h2>Leaving it running</h2>
+        <p>
+          A run that nobody is watching has to do more than count frames. Before it
+          starts, Cyclope states what it will do: how long, what hour it ends, how
+          much disk it writes. Then it holds to the conditions you set.
+        </p>
+        <ul class="plain">
+          <li><span><strong>Stop below an altitude</strong> — so the night does not end in
+            two hundred frames of trees.</span></li>
+          <li><span><strong>Stop at an hour</strong> — whatever remains.</span></li>
+          <li><span><strong>Refocus every so many frames</strong> — because focus drifts as
+            the telescope cools.</span></li>
+          <li><span><strong>Park at the end</strong> — however the end comes.</span></li>
+        </ul>
+        <p class="muted">
+          Every one of those is written to the log with its reason, because nobody
+          was there to see it happen.
+        </p>
+        <div class="note">
+          <p><strong>With a hand focuser, a refocus pauses the run.</strong> It does
+          not fail, and it does not carry on out of focus: it stops taking frames,
+          says what fell due, and waits for you to turn the knob and press continue.</p>
+        </div>
+      </section>
+
+      <section id="refuse">
+        <h2>What it refuses</h2>
+        <p>
+          Every command to the mount passes the same limits, and one that would break
+          them does not reach the telescope.
+        </p>
+        <ul class="plain">
+          <li><span>Driving anywhere near the Sun. Solar tracking stays locked until you
+            confirm a certified full-aperture filter is fitted.</span></li>
+          <li><span>Moving outside the altitude and azimuth envelope you set — into the
+            mount, the pier or the ground.</span></li>
+          <li><span>Continuing to track when the updates that keep it on target stop
+            arriving.</span></li>
+          <li><span>Moving a parked mount until it is deliberately released.</span></li>
+        </ul>
+        <div class="warn">
+          <p><strong>The Sun will blind you and destroy the equipment.</strong> No
+          software limit replaces a certified full-aperture filter, correctly fitted
+          in front of the objective, checked before every use.</p>
+        </div>
+      </section>
+
+      <section id="wrong">
+        <h2>When something is wrong</h2>
+        <div class="scroller">
+          <table>
+            <thead>
+              <tr><th>What you see</th><th>Where to look</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="symptom">The whole lunar disc is white</td>
+                <td>Exposure. Apply the Moon preset and watch the exposure guard,
+                  which reports how much of the frame has burnt out.</td>
+              </tr>
+              <tr>
+                <td class="symptom">The camera is not listed</td>
+                <td>Wireless mode still on, the manufacturer's utility still running,
+                  or a hub between the camera and the Mac.</td>
+              </tr>
+              <tr>
+                <td class="symptom">Go to lands consistently off</td>
+                <td>The pointing model. Add a reference in that part of the sky.</td>
+              </tr>
+              <tr>
+                <td class="symptom">The mount refuses to move</td>
+                <td>Park state, and the altitude and azimuth limits. Both are shown
+                  on the Observatory page.</td>
+              </tr>
+              <tr>
+                <td class="symptom">Plate solving finds nothing</td>
+                <td>A solver needs its star database, which is a separate and large
+                  download. Cyclope distinguishes a missing program from a missing
+                  database and says which.</td>
+              </tr>
+              <tr>
+                <td class="symptom">Stars are short arcs</td>
+                <td>Field rotation on an alt-azimuth mount. Shorten the frames, or
+                  turn each frame back before stacking.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">
+          For anything else, Cyclope exports a hardware diagnostic report — keep it
+          with the enquiry.
+        </p>
+      </section>
+
+      <section id="ask">
+        <h2>Questions</h2>
+        <p>
+          The full operating manual is included with the application. For anything
+          this guide does not answer, use
+          <a href="index.html#enquire" style="color:var(--accent)">the enquiry form</a>
+          and say what you observe with.
+        </p>
+      </section>
+    </article>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">Cyclope · Observatory Control</div>
+</footer>
+</body>
+</html>

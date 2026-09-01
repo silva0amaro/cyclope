@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyclope Observatory Control</title>
+<meta name="description" content="Cyclope drives the mount, the camera and the focus of a small observatory from one application on a Mac: alignment, pointing, tracking, planning, capture and the finished picture.">
+<meta name="theme-color" content="#070b14">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cyclope Observatory Control">
+<meta property="og:description" content="Cyclope drives the mount, the camera and the focus of a small observatory from one application on a Mac: alignment, pointing, tracking, planning, capture and the finished picture.">
+<meta property="og:image" content="assets/observatory.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="site">
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 100 100" role="img" aria-label="Cyclope">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#1e2c44" stroke-width="6"/>
+        <path d="M50 8 a42 42 0 0 1 0 84" fill="none" stroke="#72e1ea" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="19" fill="#72e1ea" opacity="0.9"/>
+        <circle cx="43" cy="43" r="6" fill="#dffbfd"/>
+      </svg>
+      <span class="brand-name">Cyclope</span>
+      <a class="topnav" href="guide.html">Field guide</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="label">Observatory control for macOS</p>
+    <h1>One window between you<br>and the sky.</h1>
+    <p class="lede">
+      Cyclope drives the mount, the camera and the focus from a single application:
+      alignment, pointing, tracking, planning, capture and the finished picture.
+      It is built for the amateur with one telescope in the garden, not for a dome
+      on a mountain.
+    </p>
+    <div class="hero-actions">
+      <a class="cta" href="#enquire">How to get in touch</a>
+      <a class="quiet" href="#night">See how a night runs</a>
+    </div>
+
+    <figure class="bleed">
+      <div class="shot"><img src="assets/observatory.jpg" alt="The Cyclope Observatory page: live view, mount controls and the instrument rail"></div>
+      <figcaption>The Observatory page — live view, mount control, and the readings that matter while a session runs.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="night">
+  <div class="wrap narrow">
+    <p class="label">Unattended</p>
+    <h2>The night runs itself, and stops for the right reasons.</h2>
+    <p>
+      Set the frames and the interval and Cyclope tells you, before anything starts,
+      what the run will do: how long it takes, what hour it finishes, how much disk
+      it writes.
+    </p>
+    <p>
+      Then it watches the conditions you set. Stop when the target sinks too low.
+      Stop at an hour. Refocus every so many frames. Park the mount at the end,
+      however the end comes. Each of those is written down with its reason, because
+      nobody was there to see it.
+    </p>
+    <p class="muted">
+      With a hand focuser, a refocus does not fail and does not carry on regardless:
+      the run pauses, says what fell due, and waits until you have turned the knob.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split reverse">
+      <div class="text">
+        <p class="label">Alignment and pointing</p>
+        <h2>Teach it the sky once, and it lands.</h2>
+        <p>
+          A mount knows where it thinks it is pointing. A pointing model is what
+          closes the gap between that and the sky. Cyclope builds one from two or
+          three stars and shows you the error it is correcting, so you can see
+          whether the model is any good rather than hoping.
+        </p>
+        <p>
+          With a camera and a plate solver, you need not identify anything: point
+          roughly at a star-rich field, photograph it, and Cyclope works out where
+          the telescope is actually looking. It asks before it changes the model,
+          and it never moves the telescope on its own.
+        </p>
+        <p class="muted">
+          The same solving centres a target properly: photograph, compare, correct,
+          and the object is where you meant it to be rather than near enough.
+        </p>
+      </div>
+      <figure>
+        <div class="shot"><img src="assets/alignment.jpg" alt="The Alignment page, building a pointing model from recorded references"></div>
+        <figcaption>Building the pointing model, with the error it is correcting in view.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div class="text">
+        <p class="label">Field rotation</p>
+        <h2>It knows what your mount is doing to the picture.</h2>
+        <p>
+          An alt-azimuth mount — the kind most amateurs own — turns the sky slowly
+          inside the frame while it tracks. Nothing warns you: the stars simply come
+          out as short arcs, worse at the corners, worse the higher you point.
+        </p>
+        <p>
+          Cyclope computes that rate for where the telescope is aimed and tells you
+          the longest single frame it allows. The result surprises people, because
+          the traditional advice — photograph an object when it is highest — is
+          exactly wrong on this kind of mount.
+        </p>
+        <div class="scroller">
+          <table>
+            <thead>
+              <tr><th>Target at its highest</th><th>Altitude</th><th>Longest frame</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Andromeda Galaxy</td><td class="figure-cell">87°</td><td class="figure-cell wide">0.3 s</td></tr>
+              <tr><td>Ring Nebula</td><td class="figure-cell">84°</td><td class="figure-cell wide">0.8 s</td></tr>
+              <tr><td>Dumbbell Nebula</td><td class="figure-cell">74°</td><td class="figure-cell">2.0 s</td></tr>
+              <tr><td>Orion Nebula</td><td class="figure-cell">46°</td><td class="figure-cell">5.1 s</td></tr>
+              <tr><td>Hercules Cluster</td><td class="figure-cell">63°</td><td class="figure-cell">31 s</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted" style="font-size:14.5px">
+          Worked for a 150&nbsp;mm telescope and a full-frame-format DSLR sensor at a
+          northern-Mediterranean latitude. Your own numbers appear in the application.
+        </p>
+      </div>
+      <figure>
+        <div class="shot"><img src="assets/night_planner.jpg" alt="The Night Planner, showing targets, altitude windows and framing"></div>
+        <figcaption>The Night Planner puts the night in order before you go outside.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split reverse">
+      <div class="text">
+        <p class="label">Focus</p>
+        <h2>A number, not a squint.</h2>
+        <p>
+          Focusing a telescope by eye is guesswork: at a typical focal ratio the whole
+          range that counts as sharp is under a twentieth of a millimetre of travel.
+          Cyclope measures the width of a star on the live view and gives you one
+          figure to minimise, with a word on which way to turn.
+        </p>
+        <p>
+          It reads a Bahtinov mask too, which is the surer method with a hand focuser:
+          bring the offset to zero and the guessing stops. And it says the thing every
+          beginner learns the hard way — focus on a bright star, never on the faint
+          object you came to photograph.
+        </p>
+      </div>
+      <figure>
+        <div class="shot"><img src="assets/sv205.jpg" alt="A camera page with live view and the focus assistant"></div>
+        <figcaption>Both camera pages carry the same live view and the same focus assistant.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <p class="label">Safety</p>
+    <h2>It refuses.</h2>
+    <p>
+      Every command to the mount passes through the same set of limits, and a
+      command that would break one does not reach the telescope. This is not a
+      warning dialogue you learn to dismiss.
+    </p>
+    <ul class="refusals">
+      <li>
+        <span class="what">Solar exclusion</span>
+        <span class="why">The telescope will not be driven near the Sun. Solar tracking stays locked until you confirm a certified full-aperture filter.</span>
+      </li>
+      <li>
+        <span class="what">Altitude and azimuth</span>
+        <span class="why">A move that would drive the tube into the mount, the pier or the ground is refused before it starts.</span>
+      </li>
+      <li>
+        <span class="what">Tracking watchdog</span>
+        <span class="why">If the updates that keep the telescope on target stop arriving, tracking stops rather than drifting on unattended.</span>
+      </li>
+      <li>
+        <span class="what">Park state</span>
+        <span class="why">A parked mount stays parked until it is deliberately released.</span>
+      </li>
+    </ul>
+    <p class="muted" style="margin-top:28px">
+      The limits are drawn on screen as the sky they describe, so the fence is
+      visible before anyone walks into it.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div class="text">
+        <p class="label">After the shutter</p>
+        <h2>From a pile of frames to a picture.</h2>
+        <p>
+          Cyclope keeps what it captured — every frame with the conditions it was
+          taken under — then aligns and stacks them, discarding the aeroplane that
+          crossed frame forty. On an alt-azimuth mount it turns each frame back to
+          match the first, which is what makes short exposures on such a mount add
+          up at all.
+        </p>
+        <p>
+          Colour, background gradient and contrast are brought out afterwards, and
+          for the Moon and planets it keeps only the sharpest moments of a burst —
+          the fraction of a second when the air happened to be still.
+        </p>
+      </div>
+      <figure>
+        <div class="shot"><img src="assets/imaging_lab.jpg" alt="The Imaging Lab, with histogram, measurements and frame selection"></div>
+        <figcaption>Measurements, frame ranking and stacking, on the frames you took tonight.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split reverse">
+      <div class="text">
+        <p class="label">Finding things</p>
+        <h2>What is up, and whether tonight is the night for it.</h2>
+        <p>
+          Messier and Caldwell in full, each with what it takes to photograph it
+          and how it will sit on your sensor. The sky map shows the visible sky
+          with the telescope on it, so you can see where you are pointing rather
+          than reading two numbers.
+        </p>
+        <p>
+          The planner ranks what is up tonight from where you are: how high each
+          object climbs, when it is best placed, how long the window lasts, and
+          how dark the sky will be while it is open.
+        </p>
+      </div>
+      <figure>
+        <div class="shot"><img src="assets/sky_map.jpg" alt="The sky map, showing the visible sky with the telescope position"></div>
+        <figcaption>The visible sky, with the telescope on it.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="label">In one application</p>
+    <h2>What would otherwise be five programs.</h2>
+    <div class="grid">
+      <div class="cell"><h3>Alignment and pointing</h3><p>Build a pointing model from two or three stars, by eye or by having the camera identify the field for you.</p></div>
+      <div class="cell"><h3>A catalogue worth browsing</h3><p>Messier and Caldwell in full, with what each object needs and whether tonight suits it.</p></div>
+      <div class="cell"><h3>Plate solving</h3><p>Photograph the field, find out exactly where the telescope is looking, and centre the target properly.</p></div>
+      <div class="cell"><h3>Framing and mosaics</h3><p>See how the object sits on your sensor before you spend the night on it.</p></div>
+      <div class="cell"><h3>Calibration frames</h3><p>Darks, flats and bias captured in order, named and filed, without a spreadsheet.</p></div>
+      <div class="cell"><h3>An operating manual</h3><p>A hundred-odd pages written for someone standing in the dark, included with the application.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div class="text">
+        <p class="label">Your equipment, your files</p>
+        <h2>It keeps what you photographed, in formats you can leave with.</h2>
+        <p>
+          Every capture writes the image and a record beside it of everything
+          Cyclope knew at that moment — the exposure, the gain, where the
+          telescope was pointing, the conditions, the site. Frames are written as
+          FITS, which every astronomical program reads, alongside the camera's own
+          raw files.
+        </p>
+        <p>
+          Equipment is described once and remembered: which mount, which camera,
+          which optics, what the safe limits are. Profiles can be exported and
+          carried to another Mac, and Cyclope can share the devices it drives with
+          other astronomy software on the same network.
+        </p>
+        <p class="muted">
+          Nothing is uploaded anywhere. Cyclope runs on your Mac and writes to
+          your disk.
+        </p>
+      </div>
+      <figure>
+        <div class="shot"><img src="assets/equipment.jpg" alt="The Equipment page, showing drivers, devices and saved profiles"></div>
+        <figcaption>Equipment described once: drivers, devices, optics and limits.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="label">Compatibility</p>
+    <h2>Speaks to what you already own.</h2>
+    <div class="kit">
+      <div>
+        <h3>Mounts</h3>
+        <ul>
+          <li>Celestron NexStar</li>
+          <li>Meade LX200</li>
+          <li>ASCOM Alpaca</li>
+          <li>INDI</li>
+          <li>Alt-azimuth and equatorial</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Cameras</h3>
+        <ul>
+          <li>Canon EOS</li>
+          <li>SVBONY SV205</li>
+          <li>Any USB video camera</li>
+          <li>ASCOM Alpaca and INDI</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Alongside</h3>
+        <ul>
+          <li>PHD2 guiding and dithering</li>
+          <li>ASTAP and Astrometry.net</li>
+          <li>Motorised focusers</li>
+          <li>Shares its own devices on the network</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Requires</h3>
+        <ul>
+          <li>A Mac</li>
+          <li>A telescope you can already point</li>
+          <li>Patience with the weather</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div class="text">
+        <p class="label">What it needs</p>
+        <h2>Requirements.</h2>
+        <div class="scroller">
+          <table>
+            <tbody>
+              <tr><td>Operating system</td><td class="figure-cell">macOS 12 or later</td></tr>
+              <tr><td>Processor</td><td class="figure-cell">Apple silicon or Intel</td></tr>
+              <tr><td>Installed size</td><td class="figure-cell">about 1.2 GB</td></tr>
+              <tr><td>Internet</td><td class="figure-cell">not required to observe</td></tr>
+              <tr><td>Camera connection</td><td class="figure-cell">USB, direct to the Mac</td></tr>
+              <tr><td>Mount connection</td><td class="figure-cell">serial, or over the network</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted" style="font-size:14.5px">
+          Plate solving is included, and its star catalogue is a large separate
+          download — Cyclope tells you which part is missing rather than simply
+          failing to solve.
+        </p>
+      </div>
+      <div class="text">
+        <p class="label">Being straight with you</p>
+        <h2>What it does not do.</h2>
+        <ul class="plain-list">
+          <li><strong>Windows and Linux.</strong> Cyclope is a Mac application. Nothing else is planned yet.</li>
+          <li><strong>Domes, roofs and weather stations.</strong> It drives a telescope and a camera, not an observatory building.</li>
+          <li><strong>Guiding of its own.</strong> It works alongside PHD2 rather than replacing it.</li>
+          <li><strong>Miracles on an alt-azimuth mount.</strong> It tells you the truth about field rotation and makes the best of it. It cannot remove it.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="enquire">
+  <div class="wrap narrow">
+    <p class="label">Enquiries</p>
+    <h2>Not on sale yet. Worth asking about.</h2>
+    <p class="lede">
+      Cyclope is being prepared for release. If you run a telescope from a Mac and
+      this looks like the evening you wish you had, write and say what you observe
+      with — that is exactly what decides what gets finished first.
+    </p>
+    <form class="enquiry" id="enquiry" novalidate>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email <span class="hint">so a reply can reach you</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="kit">What you observe with <span class="hint">telescope, mount, camera</span></label>
+        <input id="kit" name="kit" type="text" placeholder="Celestron 6SE, Canon EOS 250D">
+      </div>
+      <div class="field">
+        <label for="message">Your question</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <!-- Left empty by a person, filled in by most automated submitters.
+           Hidden from sight, from the keyboard and from screen readers. -->
+      <div class="trap" aria-hidden="true">
+        <label for="website">Website</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="field human">
+        <label for="sum">Before sending: what is <span id="question">four plus three</span>?</label>
+        <input id="sum" name="sum" type="text" inputmode="numeric" autocomplete="off" required>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="send">Send the enquiry</button>
+        <span class="status" id="status" role="status" aria-live="polite"></span>
+      </div>
+      <p class="fineprint" id="fineprint"></p>
+    </form>
+    <p class="muted" style="margin-top:26px">
+      <a class="quiet" href="guide.html">Read the field guide</a>
+    </p>
+  </div>
+</section>
+
+
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
+    <span>Cyclope · Observatory Control</span>
+    <span>Screenshots are of the working application.</span>
+  </div>
+</footer>
+<script>
+(function () {
+  "use strict";
+
+  // Where an enquiry goes. Empty means the visitor's own mail program is
+  // opened with the message already written, which needs no account anywhere
+  // and no server — at the cost of showing them the address. Put a form
+  // service's endpoint here to receive them without the address being public.
+  var ENDPOINT = "";
+
+  // Assembled rather than written out, so that a page-scraping harvester
+  // collecting addresses finds nothing to collect.
+  var MAILBOX = ["cyclope", "app"].join("-");
+  var DOMAIN = ["proton", "me"].join(".");
+
+  // A person reads the fields before submitting. Four seconds is well under
+  // anyone's reading time and well over an automated submitter's.
+  var MINIMUM_SECONDS = 4;
+
+  var WORDS = ["zero", "one", "two", "three", "four", "five", "six",
+               "seven", "eight", "nine", "ten", "eleven", "twelve"];
+
+  var form = document.getElementById("enquiry");
+  if (!form) { return; }
+
+  var status = document.getElementById("status");
+  var fineprint = document.getElementById("fineprint");
+  var openedAt = Date.now();
+
+  // The sum is written in words and made fresh on every load, so the answer
+  // cannot be read out of the page source or memorised from a previous visit.
+  var left = 2 + Math.floor(Math.random() * 6);
+  var right = 2 + Math.floor(Math.random() * 6);
+  document.getElementById("question").textContent = WORDS[left] + " plus " + WORDS[right];
+  var expected = left + right;
+
+  fineprint.textContent = ENDPOINT
+    ? "Your message is sent directly and is not stored on this page."
+    : "Sending opens your own mail program with the message already written.";
+
+  function say(text, kind) {
+    status.textContent = text;
+    status.className = "status" + (kind ? " " + kind : "");
+  }
+
+  function mark(id, bad) {
+    var field = document.getElementById(id).closest(".field");
+    field.classList.toggle("invalid", bad);
+    return !bad;
+  }
+
+  function looksLikeEmail(value) {
+    return /^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(value);
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var name = form.name.value.trim();
+    var email = form.email.value.trim();
+    var kit = form.kit.value.trim();
+    var message = form.message.value.trim();
+
+    // 1. The empty field that only an automated submitter fills in. Answering
+    //    as though it had worked leaves nothing to learn from and nothing to
+    //    retry against.
+    if (form.website.value !== "") {
+      say("Thank you \u2014 your enquiry has been sent.", "good");
+      form.reset();
+      return;
+    }
+
+    // 2. Faster than anyone can read the form.
+    if (Date.now() - openedAt < MINIMUM_SECONDS * 1000) {
+      say("That was quicker than reading the form. Try again in a moment.", "bad");
+      return;
+    }
+
+    // 3. A question with an answer that is nowhere in the page.
+    if (parseInt(form.sum.value, 10) !== expected) {
+      mark("sum", true);
+      say("The sum is not right.", "bad");
+      return;
+    }
+    mark("sum", false);
+
+    var ok = mark("name", name.length < 2);
+    ok = mark("email", !looksLikeEmail(email)) && ok;
+    ok = mark("message", message.length < 10) && ok;
+    if (!ok) {
+      say("Please fill in your name, a valid address, and a question.", "bad");
+      return;
+    }
+
+    var address = MAILBOX + "@" + DOMAIN;
+
+    if (!ENDPOINT) {
+      var body =
+        "Name: " + name + "\n" +
+        "Equipment: " + (kit || "not stated") + "\n\n" +
+        message + "\n";
+      window.location.href =
+        "mailto:" + address +
+        "?subject=" + encodeURIComponent("Cyclope enquiry") +
+        "&body=" + encodeURIComponent(body);
+      say("Opening your mail program\u2026");
+      return;
+    }
+
+    var button = form.querySelector("button.send");
+    button.disabled = true;
+    say("Sending\u2026");
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: name, email: email, kit: kit, message: message })
+    }).then(function (response) {
+      if (!response.ok) { throw new Error(String(response.status)); }
+      form.reset();
+      say("Thank you \u2014 your enquiry has been sent.", "good");
+    }).catch(function () {
+      say("That did not send. Write to " + address + " instead.", "bad");
+    }).then(function () {
+      button.disabled = false;
+    });
+  });
+})();
+</script>
+</body>
+</html>
